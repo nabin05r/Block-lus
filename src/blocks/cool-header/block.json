@@ -1,0 +1,25 @@
+ {
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "block-plus/cool-header",
+    "title": "Cool Header",
+    "category": "text",
+    "icon": "heading",
+    "description": "Provides cool hover effect to the header",
+    "keywords": ["header", "underline", "hover "],
+    "version": "1",
+    "textdomain": "block-plus",
+    "editorScript": "file:./index.js",
+    "attributes": {
+        "content":{
+            "type":"string",
+            "source": "html",
+            "selector": "h2"
+        },
+        "underline_color":{
+            "type": "string",
+            "default": "#1ABC9C"
+        }
+    },
+    "style": "file:./index.css" 
+ } 

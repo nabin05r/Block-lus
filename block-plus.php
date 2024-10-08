@@ -23,9 +23,20 @@ if( ! class_exists('Block_Plus')){
 
     class Block_Plus{
 
+        function __construct(){
+            $this->define_constants();
+
+            require_once(BLOCK_PLUS_PATH . '/includes/class.bp-register-blocks.php');
+            $register_block = new BP_Register_Blocks();
+        }
+
+        public function define_constants(){
+            define('BLOCK_PLUS_PATH', plugin_dir_path( __FILE__ ));
+            define('BLOCK_PLUS_URL', plugin_dir_url( __FILE__ ));
+            define('BLOCK_PLUS_VERSION', '1.0.0');
+        }
 
     }
+    $block_plus = new Block_Plus();
 
 }
-
-
