@@ -28,6 +28,10 @@ if( ! class_exists('Block_Plus')){
 
             require_once(BLOCK_PLUS_PATH . '/includes/class.bp-register-blocks.php');
             $register_block = new BP_Register_Blocks();
+
+            require_once(BLOCK_PLUS_PATH . '/includes/blocks/class.search-form.php');
+            // $search_form = new SearchForm();
+        
         }
 
         public function define_constants(){

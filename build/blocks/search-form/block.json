@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "block-plus/search-form",
+  "title": "Search Form",
+  "category": "widgets",
+  "icon": "search",
+  "description": "Provides search form block",
+  "keywords": [
+    "search form"
+  ],
+  "version": "1",
+  "textdomain": "block-plus",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "bgColor": {
+      "type": "string",
+      "default": "#1ABC9C"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#2C3E50"
+    }
+  },
+  "style": "file:./index.css"
+}
