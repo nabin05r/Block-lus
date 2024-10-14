@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "block-plus/sign-up",
+  "title": "Sign Up",
+  "category": "widgets",
+  "icon": "search",
+  "description": "Provides sign up block",
+  "keywords": [
+    "sign up"
+  ],
+  "version": "1",
+  "textdomain": "block-plus",
+  "editorScript": "file:./index.js"
+}

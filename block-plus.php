@@ -26,12 +26,14 @@ if( ! class_exists('Block_Plus')){
         function __construct(){
             $this->define_constants();
 
-            require_once(BLOCK_PLUS_PATH . '/includes/class.bp-register-blocks.php');
+            require_once(BLOCK_PLUS_PATH . 'includes/class.bp-register-blocks.php');
             $register_block = new BP_Register_Blocks();
 
-            require_once(BLOCK_PLUS_PATH . '/includes/blocks/class.search-form.php');
-            // $search_form = new SearchForm();
-        
+            //Using glob function to enqueue all the blocks functions
+            $block_subdirectory_files = glob(BLOCK_PLUS_PATH . 'includes/blocks/*.php');
+            foreach($block_subdirectory_files as $sub_directory_file){
+                require_once($sub_directory_file);
+            }
         }
 
         public function define_constants(){
