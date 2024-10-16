@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/blocks/sign-up/main.css":
-/*!*************************************!*\
-  !*** ./src/blocks/sign-up/main.css ***!
-  \*************************************/
+/***/ "./src/blocks/login-form/main.css":
+/*!****************************************!*\
+  !*** ./src/blocks/login-form/main.css ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -64,13 +64,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/blocks/sign-up/block.json":
-/*!***************************************!*\
-  !*** ./src/blocks/sign-up/block.json ***!
-  \***************************************/
+/***/ "./src/blocks/login-form/block.json":
+/*!******************************************!*\
+  !*** ./src/blocks/login-form/block.json ***!
+  \******************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"block-plus/sign-up","title":"Sign Up","category":"widgets","icon":"businessperson","description":"Provides sign up block","keywords":["sign up"],"version":"1","textdomain":"block-plus","editorScript":"file:./index.js","attributes":{"showAuth":{"type":"boolean","default":true}},"style":"file:./index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"block-plus/login-form","title":"Login Form","category":"text","icon":"forms","description":"Provides login form modal","keywords":["login form"],"version":"1","textdomain":"block-plus","editorScript":"file:./index.js","attributes":{"showRegister":{"type":"boolean","default":true}},"style":"file:./index.css","viewScript":"file:./frontend.js"}');
 
 /***/ })
 
@@ -145,9 +145,9 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*************************************!*\
-  !*** ./src/blocks/sign-up/index.js ***!
-  \*************************************/
+/*!****************************************!*\
+  !*** ./src/blocks/login-form/index.js ***!
+  \****************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
@@ -157,8 +157,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/sign-up/block.json");
-/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./main.css */ "./src/blocks/sign-up/main.css");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/login-form/block.json");
+/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./main.css */ "./src/blocks/login-form/main.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
 
@@ -174,45 +174,25 @@ __webpack_require__.r(__webpack_exports__);
     setAttributes
   }) {
     const {
-      showAuth
+      showRegister
     } = attributes;
     const blockProp = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("General", 'block-plus'),
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Show Login/Sign Up", 'block-plus'),
-            options: [{
-              label: 'No',
-              value: false
-            }, {
-              label: 'Yes',
-              value: true
-            }],
-            value: showAuth,
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('General', 'block-plus'),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Show Login Form', 'block-plus'),
+            checked: showRegister,
             onChange: newValue => setAttributes({
-              showAuth: newValue === 'true'
-            })
+              showRegister: newValue
+            }),
+            help: showRegister ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Showing Login Form', 'block-plus') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Disabling Login Form', 'block-plus')
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         ...blockProp,
-        children: showAuth ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
-          className: "signin-link open-modal",
-          href: "#",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "signin-icon",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
-              className: "bi bi-person-circle"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-            className: "signin-text",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("small", {
-              children: "Hello, Sign in"
-            }), "My Account"]
-          })]
-        }) : null
+        children: showRegister ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('This block is not previewable from the editor. View your site from live demo ', 'block-plus') : null
       })]
     });
   }

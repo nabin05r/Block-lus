@@ -34,6 +34,11 @@ if( ! class_exists('Block_Plus')){
             foreach($block_subdirectory_files as $sub_directory_file){
                 require_once($sub_directory_file);
             }
+
+            // require_once(BLOCK_PLUS_PATH . 'includes/rest-api/signup.php');
+            //REST API
+            require_once(BLOCK_PLUS_PATH . 'includes/rest-api/class.init.php');
+            $res_api = new BH_RestAPI();
         }
 
         public function define_constants(){

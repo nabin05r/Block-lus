@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "block-plus/login-form",
+    "title": "Login Form",
+    "category": "text",
+    "icon": "forms",
+    "description": "Provides login form modal",
+    "keywords": ["login form"],
+    "version": "1",
+    "textdomain": "block-plus",
+    "editorScript": "file:./index.js",
+    "attributes": {
+        "showRegister":{
+            "type":"boolean",
+            "default":true
+        }
+    },
+    "style": "file:./index.css",
+    "viewScript": "file:./frontend.js"
+ } 

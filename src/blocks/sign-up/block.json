@@ -4,10 +4,17 @@
     "name": "block-plus/sign-up",
     "title": "Sign Up",
     "category": "widgets",
-    "icon": "search",
+    "icon": "businessperson",
     "description": "Provides sign up block",
     "keywords": ["sign up"],
     "version": "1",
     "textdomain": "block-plus",
-    "editorScript": "file:./index.js"
+    "editorScript": "file:./index.js",
+    "attributes": {
+        "showAuth":{
+            "type":"boolean",
+            "default":true
+        }
+    },
+    "style": "file:./index.css"
  } 

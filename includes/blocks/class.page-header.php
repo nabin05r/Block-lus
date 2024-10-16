@@ -16,6 +16,6 @@ function bp_page_header_cb($attr){
         </div>
     <?php
     $output = ob_get_contents();
-    ob_get_clean();
+    ob_end_clean();
     return $output;
 }

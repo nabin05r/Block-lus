@@ -1,22 +1,23 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "block-plus/sign-up",
-  "title": "Sign Up",
-  "category": "widgets",
-  "icon": "businessperson",
-  "description": "Provides sign up block",
+  "name": "block-plus/login-form",
+  "title": "Login Form",
+  "category": "text",
+  "icon": "forms",
+  "description": "Provides login form modal",
   "keywords": [
-    "sign up"
+    "login form"
   ],
   "version": "1",
   "textdomain": "block-plus",
   "editorScript": "file:./index.js",
   "attributes": {
-    "showAuth": {
+    "showRegister": {
       "type": "boolean",
       "default": true
     }
   },
-  "style": "file:./index.css"
+  "style": "file:./index.css",
+  "viewScript": "file:./frontend.js"
 }
